@@ -45,7 +45,7 @@ const Hero = () => {
 
   useGSAP(() => {
     gsap.set("#video-frame", {
-      clipPath: 'polygon(14% 0%, 70% 0%, 90% 90%, 0 100%)',
+      clipPath: 'polygon(13% 0, 83% 0, 85% 81%, 0% 84%)',
     });
 
     gsap.from("#video-frame", {
@@ -97,7 +97,7 @@ const Hero = () => {
         <div className="absolute-center absolute z-50 w-[900px] h-[900px] cursor-pointer overflow-hidden rounded-lg">
           <div
             onClick={handleMiniVideoClick}
-            className="origin-center flex w-full h-full cursor-pointer items-center justify-center rounded-lg scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
+            className="origin-center flex w-full h-full cursor-pointer items-center justify-center rounded-lg scale-25 opacity-0 transition-all duration-500 ease-in hover:scale-50 hover:opacity-100"
           >
             <video
               ref={nextVideoRef}
