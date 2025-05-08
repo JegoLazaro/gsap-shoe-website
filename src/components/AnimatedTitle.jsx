@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const AnimatedTitle = () => {
+const AnimatedTitle = ({ title, containerClass }) => {
+  const containerRef = React.useRef(null);
+
+  
+  useEffect(() => {
+
+  },[])
+
   return (
-    <div>
-      <div className="text-4xl uppercase font-general font-semibold leading-tight text-center px-2 md:text-[4rem]">
+      <div ref={containerRef} className={`animated-title ${containerClass}`}>
         <p className="max-w-[1200px]">
-          From the <span className="text-red-600 font-light">streets</span> to
-          the <span className="text-red-600 font-light">court</span>,{" "}
-          <span className="text-red-600  font-bold">Jordan</span> stands for
-          those who defy <span className="text-red-600 font-light">limits</span>{" "}
-          and define <span className="text-red-600 font-light">eras</span>.
+          {title.split("<br />").map((line, index) => (
+            <div
+              key={index}
+              className="flex-center max-w-full flex-wrap gap-2 px-10 md:gap-3"
+            >
+              {line.split(" ").map((word, index) => (
+                <span
+                  key={index}
+                  className="animated-word"
+                  dangerouslySetInnerHTML={{ __html: word }}
+                />
+              ))}
+            </div>
+          ))}
         </p>
       </div>
-    </div>
   );
 };
 
