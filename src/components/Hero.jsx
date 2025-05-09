@@ -45,20 +45,20 @@ const Hero = () => {
 
   useGSAP(() => {
     gsap.set("#video-frame", {
-      clipPath: 'polygon(13% 0, 83% 0, 85% 81%, 0% 84%)',
+      clipPath: "polygon(13% 0, 68% 0, 90% 85%, 12% 90%)",
     });
-
+  
     gsap.from("#video-frame", {
-      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0 100%)',
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: "#video-frame",
         start: "center center",
         end: "bottom center",
         scrub: true,
-      }
-    })
-  })
+      },
+    });
+  });
 
   useEffect(() => {
   if (loadedVideos === 2) {
@@ -90,6 +90,7 @@ const Hero = () => {
           </div>
         )
       }
+      <div className="relative overflow-hidden rounded-b-[1rem]">
       <div
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg"
@@ -128,7 +129,7 @@ const Hero = () => {
           autoPlay
           className="absolute left-0 top-0 size-full object-cover object-center"
         />
-      </div>
+      </div></div>
       {/* <h1 className="special-font hero-heading absolute top-5 right-5 z-40 text-blue-75">
         AIR <span className="text-red-600">JORDAN</span>
       </h1> */}
