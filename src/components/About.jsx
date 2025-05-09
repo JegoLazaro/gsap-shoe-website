@@ -12,7 +12,7 @@ const About = () => {
       scrollTrigger: {
         trigger: "#clip",
         start: "center center",
-        end: "+=800 center",
+        end: "+=500 center",
         scrub: 0.5,
         pin: true,
         pinSpacing: true,
@@ -20,9 +20,27 @@ const About = () => {
     });
 
     clipAnimation.to(".mask-clip-path", {
-      width: "100vw",
-      height: "100vh",
-      borderRadius: 0,
+      clipPath: `
+        polygon(
+          0% 0%,
+          100% 0%,
+          100% 0%,
+          100% 100%,
+          100% 100%,
+          0% 100%,
+          0% 100%,
+          0% 0%
+        )
+      `,
+      ease: "power2.inOut",
+      duration: 1.2,
+    });
+
+    clipAnimation.to(".mask-clip-path", {
+      width: "100%",
+      height: "100%",
+      ease: "power2.inOut",
+      duration: 1.2,
     });
   });
 
@@ -32,18 +50,12 @@ const About = () => {
         <h2 className="font-robert-regular font-semibold text-lg uppercase md:text-[14px] ">
           Fly Above the Rest.
         </h2>
-
-        {/* <div className="text-4xl uppercase font-general font-semibold leading-tight text-center px-2 md:text-[4rem]">
-          <p className="max-w-[1200px]">
-            From the <span className="text-red-600 font-light">streets</span> to
-            the <span className="text-red-600 font-light">court</span>,{" "}
-            <span className="text-red-600  font-bold">Jordan</span> stands for
-            those who defy{" "}
-            <span className="text-red-600 font-light">limits</span> and define{" "}
-            <span className="text-red-600 font-light">eras</span>.
-          </p>
-        </div> */}
-        <AnimatedTitle title="From the <br /> streets to the <br /> court, Jordan <br /> stands for those who <br /> defy limits and <br /> define eras." containerClass="text-4xl uppercase font-general font-semibold leading-tight text-center px-2 md:text-[4rem]" />
+        <AnimatedTitle
+          containerClass="mt-5 !text-black text-center"
+          title={`
+            From the <span class='text-red-600 font-light'>streets</span> to the <span class='text-red-600 font-light'>court</span>, 
+            <br/><span class='text-red-600 font-bold'>Jordan</span> stands for those <br/> who defy <span class='text-red-600 font-light'>limits</span> and define <span class='text-red-600 font-light'>eras</span>.`}
+        />
         <div className="about-subtext">
           <p>
             Jordan is not just a name — it’s a movement, a mindset, a legacy
