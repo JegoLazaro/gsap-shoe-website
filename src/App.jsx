@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import Hero from './components/Hero'
 import About from './components/About'
 import Navbar from './components/Navbar'
+import Featured from './components/Featured'
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <About />
+      <Featured />
       {/* <section className='z-0 min-h-screen bg-black' /> */}
     </main>
   )
