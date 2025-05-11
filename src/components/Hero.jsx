@@ -134,7 +134,7 @@ const Hero = () => {
         AIR <span className="text-red-600">JORDAN</span>
       </h1> */}
 
-      <div className="absolute top-5 right-5 z-40">
+      <div className="absolute top-24 right-5 z-40">
         <div className="m5-24 px-5 sm:px-10">
           <h1 className="special-font hero-heading text-gray-300">
             AIR <span className="text-red-600">JORDAN</span>
