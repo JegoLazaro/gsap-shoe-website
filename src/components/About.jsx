@@ -1,12 +1,14 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/all";
 import AnimatedTitle from "./AnimatedTitle";
 
 // gsap.registerPlugin(ScrollTrigger)
 
 const About = () => {
+  const containerRef = useRef(null);
+
   useGSAP(() => {
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
@@ -18,25 +20,38 @@ const About = () => {
         pinSpacing: true,
       },
     });
-
-    clipAnimation.to(".mask-clip-path", {
+  
+    clipAnimation.from(".mask-clip-path", {
       clipPath: `
         polygon(
-          0% 0%,
-          100% 0%,
-          100% 0%,
-          100% 100%,
-          100% 100%,
-          0% 100%,
-          0% 100%,
-          0% 0%
+          0% 0%, 100% 0%, 100% 100%, 0% 100%
         )
       `,
+      borderColor: "black",
+      borderWidth: "5px",
+      borderRadius: "10%",
+      skewY: "10deg",
+      skewX: "-5deg",
       ease: "power2.inOut",
       duration: 1.2,
     });
-
+  
     clipAnimation.to(".mask-clip-path", {
+      clipPath: `
+        polygon(
+          0% 0%, 100% 0%, 100% 100%, 0% 100%
+        )
+      `,
+      borderWidth: "5px",
+      borderRadius: "0%",
+      skewY: "0deg",
+      skewX: "0deg",
+      ease: "power2.inOut",
+      duration: 1.2,
+    });
+  
+    clipAnimation.to(".mask-clip-path", {
+      borderWidth: "0px",
       width: "100%",
       height: "100%",
       ease: "power2.inOut",
@@ -63,13 +78,15 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="h-dvh w-screen" id="clip">
+      <div ref={containerRef}  className=" h-dvh w-screen mt-24" id="clip">
         <div className="mask-clip-path about-image">
-          <img
-            src="/image/jordan-img-1.webp"
-            alt="Background"
-            className="absolute left-0 top-0 size-full object-cover"
-          />
+          <div className="image-wrapper">
+            <img
+              src="/image/jordan-img-4.webp"
+              alt="Background"
+              className="absolute left-0 top-0 size-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </div>
