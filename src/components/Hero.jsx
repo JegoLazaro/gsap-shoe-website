@@ -45,7 +45,7 @@ const Hero = () => {
 
   useGSAP(() => {
     gsap.set("#video-frame", {
-      clipPath: "polygon(13% 0, 68% 0, 90% 85%, 12% 90%)",
+      clipPath: "polygon(0 75%, 0 0, 100% 0, 100% 75%, 50% 100%)",
     });
   
     gsap.from("#video-frame", {
@@ -136,7 +136,7 @@ const Hero = () => {
 
       <div className="absolute top-5 right-5 z-40">
         <div className="m5-24 px-5 sm:px-10">
-          <h1 className="special-font hero-heading text-blue-100">
+          <h1 className="special-font hero-heading text-gray-300">
             AIR <span className="text-red-600">JORDAN</span>
           </h1>
           <p className="mb-5 text-lg font-semibold text-end text-blue-75 font-robert-regular">
@@ -162,7 +162,7 @@ const Hero = () => {
             />
           </div>
 
-          <h1 className="special-font hero-heading text-blue-100">
+          <h1 className="special-font hero-heading text-gray-300">
             <span className="text-red-600">OUR</span> TURN.
           </h1>
         </div>
