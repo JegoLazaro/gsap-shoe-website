@@ -71,6 +71,10 @@ const Hero = () => {
     setCurrentIndex((prevIndex) => (prevIndex % totalVideos) + 1);
   };
 
+  // const ytVidsArr = [
+    
+  // ]
+
   const getVideoSrc = (index) => `videos/jordan${index}.mp4`;
 
   const handleVideoLoad = () => {
@@ -117,7 +121,7 @@ const Hero = () => {
           src={getVideoSrc(currentIndex)}
           loop
           muted
-          // autoPlay
+          autoPlay
           id="next-video"
           className="absolute-center clipped-image invisible origin-center absolute z-20 size-64 object-cover object-center"
           onLoadedData={handleVideoLoad}
@@ -126,7 +130,7 @@ const Hero = () => {
           src={getVideoSrc(currentIndex === totalVideos - 1 ? 1 : currentIndex)}
           loop
           muted
-          // autoPlay
+          autoPlay
           className="absolute left-0 top-0 size-full object-cover object-center"
         />
       </div></div>

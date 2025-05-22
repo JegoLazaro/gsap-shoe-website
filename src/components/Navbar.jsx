@@ -44,7 +44,7 @@ const Navbar = () => {
   return (
     <div
       ref={navContainerRef}
-      className="floating-nav fixed inset-x-0 floating-nav top-14 h-18 z-50 border-none transition-all duration-500  sm:inset-x-14"
+      className="fixed inset-x-0 floating-nav top-14 h-18 z-50 border-none transition-all duration-500  sm:inset-x-14"
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <a
                   href={`#${nav.toLowerCase()}`}
                   key={nav}
-                  className="nav-hover-btn"
+                  className="nav-hover-btn animate-pulse font-semibold text-gray-500"
                 >
                   {nav}
                 </a>
